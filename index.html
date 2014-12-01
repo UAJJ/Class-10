@@ -1,0 +1,203 @@
+<html>
+	<head>
+		<!-- CSS & jQuery for Bootstrap and jQuery    -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/liScroll.css" rel="stylesheet">
+
+		<style>
+			#search {
+				text-align: center;
+			}
+
+			.wookmark h2, .wookmark p {
+				text-align: center;
+			}
+
+			.wookmark li {
+				padding: 10px 10px 20px 10px;
+				background-color: #ddd;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				list-style: none;
+			}
+
+			.wookmark ul {
+				position: relative;
+			}
+
+			.wookmark img {
+				width: 160px;
+			}
+
+			.container {
+				margin-top: 40px;
+				background-color: rgba(255,255,255, .92);
+			}
+
+			.photo {
+				background: url('img/img-4.jpg') no-repeat center center fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+			    width:100%;
+			    height:400px;
+			    margin:0;
+			    padding: 0;
+			}
+
+
+		</style>
+	</head>
+
+	<body>
+		<ul id="ticker">
+			<li>
+				<span>Dec. 1, 2014</span>
+				<a href="#">Lorem Ipsum</a>
+			</li>
+			<li>
+				<span>Dec. 4, 2014</span>
+				<a href="#">Lorem Ipsum</a>
+			</li>
+			<li>
+				<span>Dec. 11, 2014</span>
+				<a href="#">Lorem Ipsum</a>
+			</li>
+			<li>
+				<span>Dec. 17, 2014</span>
+				<a href="#">Lorem Ipsum</a>
+			</li>
+			<li>
+				<span>Dec. 25, 2014</span>
+				<a href="#">Lorem Ipsum</a>
+			</li>
+			<li>
+				<span>Dec. 27, 2014</span>
+				<a href="#">Lorem Ipsum</a>
+			</li>
+		</ul>
+		<div class="photo" data-stellar-background-ratio="0.5" >
+		</div>
+		<div class="container">
+			<div id="category-list" class="wookmark">
+				<div id="search">
+					<input class="search" />
+					<span class="sort" data-sort="title">Sort by title</span>
+				</div>
+				<ul class="list">
+					<li>
+						<p class="title">A</p>
+						<img src="img/pup1.jpg">
+					</li>
+					<li>
+						<p class="title">B</p>
+						<img src="img/pup2.jpg">
+					</li>
+					<li>
+						<p class="title">C</p>
+						<img src="img/pup3.jpg">
+					</li>
+					<li>
+						<p class="title">A</p>
+						<img src="img/pup1.jpg">
+					</li>
+					<li>
+						<p class="title">B</p>
+						<img src="img/pup2.jpg">
+					</li>
+					<li>
+						<p class="title">C</p>
+						<img src="img/pup3.jpg">
+					</li>
+					<li>
+						<p class="title">A</p>
+						<img src="img/pup1.jpg">
+					</li>
+					<li>
+						<p class="title">B</p>
+						<img src="img/pup2.jpg">
+					</li>
+					<li>
+						<p class="title">C</p>
+						<img src="img/pup3.jpg">
+					</li>
+					<li>
+						<p class="title">A</p>
+						<img src="img/pup1.jpg">
+					</li>
+					<li>
+						<p class="title">B</p>
+						<img src="img/pup2.jpg">
+					</li>
+					<li>
+						<p class="title">C</p>
+						<img src="img/pup3.jpg">
+					</li>
+					<li>
+						<p class="title">A</p>
+						<img src="img/pup1.jpg">
+					</li>
+					<li>
+						<p class="title">B</p>
+						<img src="img/pup2.jpg">
+					</li>
+					<li>
+						<p class="title">C</p>
+						<img src="img/pup3.jpg">
+					</li>
+					<li>
+						<p class="title">A</p>
+						<img src="img/pup1.jpg">
+					</li>
+					<li>
+						<p class="title">B</p>
+						<img src="img/pup2.jpg">
+					</li>
+					<li>
+						<p class="title">C</p>
+						<img src="img/pup3.jpg">
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/woomark.js"></script>
+		<script src="js/list.min.js"></script>
+		<script src="js/stellar.min.js"></script>
+		<script src="js/liScroll.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				// liScroll plugin
+				$('#ticker').liScroll();
+
+				// List.js plugin
+				var options = {
+				    valueNames: ['title']
+				};
+
+				var categoryList = new List('category-list', options);
+
+				// Wookmark Plugin
+				$('.wookmark li').wookmark({
+					autoResize: true,
+					container: $('.wookmark ul'),
+					offset: 5,
+					outerOffset: 10,
+					itemWidth: 200
+				});
+
+				// Stellar plugin
+				$(function() {
+					$.stellar({
+						horizontalScrolling: false
+					});
+				})
+
+			});
+		</script>
+	</body>
+</html>
